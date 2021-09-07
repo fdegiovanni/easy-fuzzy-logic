@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuzzy Logic</title>
+    <link rel="stylesheet" href="./styles.scss">
+    <style>
+        #leftbox {
+            float:left; 
+            width:46%;
+            height: 100vh;
+        }
+        #middlebox{
+            float:left; 
+            background:lightblue;
+            width:100px;
+            height: 450px;
+            text-align: center;
+        }
+        #rightbox{
+            float:right;
+            width:33%;
+            height: 100vh;
+            position: relative;
+        }
+
+        #ball {
+            background: red;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            position:absolute;
+            left:50%;
+            transform: translateX(-50%);
+            top: 200px;
+        }
+
+        #target {
+            position:absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 225px;
+
+            background: rgba(0, 255, 0, 0.4);
+            width: 32px;
+            height: 32px;
+            shape-outside: ellipse(50% 50%);
+            clip-path: ellipse(50% 50%);
+        }
+
+        #fan {
+            position:absolute;
+            top: 455px;
+            width: 80px; 
+            height: 80px;  
+            margin-left: 10px;  
+            background: #f00;
+            -webkit-animation: spin 5.5s infinite linear;
+        }
+
+        @-webkit-keyframes spin {
+            0%  {-webkit-transform: rotate(0deg);}
+            100% {-webkit-transform: rotate(360deg);}	
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="leftbox"></div>
+        <div id="middlebox">
+            <div id="target"></div>
+            <div id="ball"></div>
+            <div id="fan"></div>
+        </div>
+        <div id="rightbox">
+            <div>
+                Info del sistema🧮
+                <ul>
+                    <li><em>Objetivo en Y:</em><span id="objetivo"></span></li>
+                    <li><em>Posicion en Y:</em><span id="posicion"></span></li>
+                    <li><em>Velocidad en Y:</em><span id="velocidad"></span></li>
+                    <li><em>Ventilador:</em><span id="ventilador"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>
